@@ -1,0 +1,57 @@
+.api {
+  height: 230px;
+  display: flex;
+}
+
+.left-api {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #c4c4c4;
+  justify-content: space-between;
+  padding: 20px;
+} 
+
+.left-api h1 {
+  font-family: Roboto;
+  font-size: 30px;
+  color: black;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.description {
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.link {
+  font-style: italic;
+  font-weight: 500;
+  font-family: Roboto;
+  font-style: 15px;
+}
+
+.right-api {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #909AD0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.right-api span {
+  font-family: Roboto;
+  font-style: italic;
+  font-weight: 500;
+}

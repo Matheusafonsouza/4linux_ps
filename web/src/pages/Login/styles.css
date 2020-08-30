@@ -97,6 +97,7 @@
 }
 
 .input-group input {
+  font-family: Roboto;
   width: 100%;
   height: 70px;
   background-color: #dfdfdf;
