@@ -16,8 +16,14 @@ export default function Home() {
   useEffect(() => {
     console.log(category)
     axios.get(`https://api.publicapis.org/entries?category=${category}&title=${name}`).then(response => {
-      setApis(response.data.entries);
       setApiNumber(response.data.count);
+
+      if (response.data.count === 0) {
+        setApis([]);
+      } else {
+        setApis(response.data.entries);
+      }
+
     });
   }, [category, name]);
 
