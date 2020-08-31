@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link, useHistory } from 'react-router-dom';
 import { FiLogOut } from 'react-icons/fi';
 
 import Card from '../../components/Card';
@@ -7,6 +8,8 @@ import Card from '../../components/Card';
 import './styles.css';
 
 export default function Home() {
+  const history = useHistory();
+
   const [apis, setApis] = useState([]);
   const [apiNumber, setApiNumber] = useState('');
 
@@ -27,17 +30,22 @@ export default function Home() {
     });
   }, [category, name]);
 
+  function handleLogout() {
+    localStorage.removeItem('token');
+    history.push('/login');
+  }
+
   return (
     <div className="home">
-      <div className="left-bar">
-        <span>
+      <div className="home-left-bar">
+        <Link className="logout" onClick={handleLogout} >
           <FiLogOut />
           logout
-        </span>
+        </Link>
 
         <h1>Número de API's: {apiNumber}</h1>
 
-        <div className="input-group">
+        <div className="home-input-group">
           <input
             type="text"
             placeholder="Categoria"
@@ -52,7 +60,7 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className="right-bar">
+      <div className="home-right-bar">
         <div className="api-grid">
           {apis.map(api => (
             <Card api={api} />
