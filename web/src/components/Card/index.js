@@ -2,19 +2,18 @@ import React from 'react';
 
 import './styles.css';
 
-export default function Card() {
+export default function Card({ api }) {
   return (
-
     <div className="api">
       <div className="left-api">
-        <h1>Cat Facts / Animals</h1>
-        <span className="description" >auheuaheuhaueuahuehauhueahuehu</span>
-        <span className="link">https://alexwohlbruck.github.io/cat-facts/</span>
+        <h1>{api.API} / {api.Category}</h1>
+        <span className="description">{api.Description}</span>
+        <a href={api.Link} className="link">{api.Link}</a>
       </div>
       <div className="right-api">
-        <span>https: true</span>
-        <span>cors: no</span>
-        <span>auth: não sei</span>
+        <span>https: {api.HTTPS}</span>
+        <span>cors: {api.Cors}</span>
+        <span>auth: {api.Auth}</span>
       </div>
     </div>
   );

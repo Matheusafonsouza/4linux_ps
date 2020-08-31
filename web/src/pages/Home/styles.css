@@ -62,8 +62,8 @@
 .api-grid {
   margin: 50px 0 50px 150px;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 40px;
   overflow-y: scroll;
 }
